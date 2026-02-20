@@ -43,6 +43,30 @@ Web UI
 
 ## 📁 Project Structure
 
+```
+structurehub/
+│
+├── manage.py # Django management entry point
+├── structurehub/ # Django project (settings, urls, wsgi, asgi)
+│
+├── monitor/ # Core monitoring app
+│ ├── models.py
+│ ├── views.py
+│ ├── decode_payload.py # BLE manufacturer payload decoding
+│ ├── management/
+│ │ └── commands/
+│ │ └── ble_worker.py # BLE → Django ingestion service
+│
+├── deploy/
+│ └── structurehub-ble.service # systemd service definition
+│
+├── docs/
+│ └── architecture.md # System architecture documentation
+│
+├── requirements.txt # Python dependencies
+└── README.md
+```
+
 ****
 
 ## Installation
