@@ -1,0 +1,15 @@
+[Unit]
+Description=StructureHub BLE Worker (BLE -> Django SQLite)
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/home/an/pidjango
+Environment="DJANGO_SETTINGS_MODULE=structurehub.settings"
+ExecStart=/home/an/pidjango/djenv/bin/python /home/an/pidjango/manage.py ble_worker --flush-ms 500 --batch-size 50
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,19 @@
+{# StructureHub/_nav.html #}
+{% with current=request.resolver_match.url_name %}
+<div class="btn-group" role="group" aria-label="Navigation">
+  <a class="btn btn-outline-primary {% if current == 'index' %}active{% endif %}"
+     href="{% url 'monitor:index' %}">Home</a>
+
+  <a class="btn btn-outline-primary {% if current == 'live' %}active{% endif %}"
+     href="{% url 'monitor:live' %}">Live</a>
+
+  <a class="btn btn-outline-primary {% if current == 'timeline' %}active{% endif %}"
+     href="{% url 'monitor:timeline' %}">Timeline</a>
+
+  <a class="btn btn-outline-primary {% if current == 'history' %}active{% endif %}"
+     href="{% url 'monitor:history' %}">History</a>
+
+  <a class="btn btn-outline-primary"
+     href="{% url 'admin:index' %}">Admin</a>
+</div>
+{% endwith %}
