@@ -28,6 +28,23 @@ Sensor → BLE → structurehub-ble.service → Django ORM → SQLite → Apache
 - Django 6.x
 - Bleak
 
+# StructureHub Architecture
+
+Sensor (nRF52840)
+    ↓ BLE Manufacturer Payload
+Raspberry Pi
+    ↓ structurehub-ble.service
+Django ORM
+    ↓ SQLite (/var/lib/structurehub/db.sqlite3)
+Apache + mod_wsgi
+    ↓
+Web UI
+
+
+## 📁 Project Structure
+
+****
+
 ## Installation
 
 1. Clone repo
